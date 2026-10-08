@@ -1,0 +1,69 @@
+[gd_resource type="AnimationNodeBlendSpace2D" format=3 uid="uid://c7s464uboateq"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_536xg"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nprnp"]
+animation = &"Jog_Fwd"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fn4vf"]
+animation = &"Sprint"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6j636"]
+animation = &"Jog_Bwd"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vfjoj"]
+animation = &"Jog_Left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_j1btr"]
+animation = &"Jog_Right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tcty7"]
+animation = &"Jog_Fwd_LeanL"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4bvsw"]
+animation = &"Jog_Fwd_LeanR"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_le3oh"]
+animation = &"Jog_Bwd_L"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0si1a"]
+animation = &"Jog_Bwd_R"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mu8y1"]
+animation = &"Walk"
+
+[resource]
+blend_point_0/node = SubResource("AnimationNodeAnimation_536xg")
+blend_point_0/pos = Vector2(0, 0)
+blend_point_0/name = &"Idle"
+blend_point_1/node = SubResource("AnimationNodeAnimation_nprnp")
+blend_point_1/pos = Vector2(0, 0.6)
+blend_point_1/name = &"Jog_Fwd"
+blend_point_2/node = SubResource("AnimationNodeAnimation_6j636")
+blend_point_2/pos = Vector2(0, -1)
+blend_point_2/name = &"Jog_Bwd"
+blend_point_3/node = SubResource("AnimationNodeAnimation_vfjoj")
+blend_point_3/pos = Vector2(-1, 0)
+blend_point_3/name = &"Jog_Left"
+blend_point_4/node = SubResource("AnimationNodeAnimation_j1btr")
+blend_point_4/pos = Vector2(1, 0)
+blend_point_4/name = &"Jog_Right"
+blend_point_5/node = SubResource("AnimationNodeAnimation_tcty7")
+blend_point_5/pos = Vector2(-1, 1)
+blend_point_5/name = &"Jog_Fwd_LeanL"
+blend_point_6/node = SubResource("AnimationNodeAnimation_4bvsw")
+blend_point_6/pos = Vector2(1, 1)
+blend_point_6/name = &"Jog_Fwd_LeanR"
+blend_point_7/node = SubResource("AnimationNodeAnimation_le3oh")
+blend_point_7/pos = Vector2(-1, -1)
+blend_point_7/name = &"Jog_Bwd_L"
+blend_point_8/node = SubResource("AnimationNodeAnimation_0si1a")
+blend_point_8/pos = Vector2(1, -1)
+blend_point_8/name = &"Jog_Bwd_R"
+blend_point_9/node = SubResource("AnimationNodeAnimation_mu8y1")
+blend_point_9/pos = Vector2(0, 0.3)
+blend_point_9/name = &"Walk"
+blend_point_10/node = SubResource("AnimationNodeAnimation_fn4vf")
+blend_point_10/pos = Vector2(0, 1)
+blend_point_10/name = &"Sprint"

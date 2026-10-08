@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://b3v3i6e8vdkx3"]
+
+[ext_resource type="Script" uid="uid://cw5eyqhkn2clh" path="res://code/main.gd" id="1_choun"]
+[ext_resource type="PackedScene" uid="uid://clpkbkdwwhi53" path="res://scenes/player.tscn" id="2_o6xl0"]
+[ext_resource type="Script" uid="uid://cpftfl88lx07" path="res://code/ui_root.gd" id="6_jkv2x"]
+[ext_resource type="Script" uid="uid://dv3i5aqutgy74" path="res://code/entity.gd" id="7_jbj1t"]
+[ext_resource type="ArrayMesh" uid="uid://b6pf4mvm6581f" path="res://mesh/rock.tres" id="8_muem4"]
+[ext_resource type="Script" uid="uid://bvwyc4p8ii10y" path="res://code/item_data.gd" id="9_dp3eg"]
+[ext_resource type="Script" uid="uid://j33r1rthsngr" path="res://code/interactable.gd" id="10_0ld40"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ygenq"]
+
+[sub_resource type="Sky" id="Sky_v6epu"]
+sky_material = SubResource("ProceduralSkyMaterial_ygenq")
+
+[sub_resource type="Environment" id="Environment_i7pll"]
+background_mode = 2
+sky = SubResource("Sky_v6epu")
+ambient_light_source = 3
+reflected_light_source = 2
+fog_enabled = true
+
+[sub_resource type="Resource" id="Resource_85g3d"]
+script = ExtResource("9_dp3eg")
+max_stack = null
+
+[node name="Main" type="Node3D" unique_id=232738217]
+script = ExtResource("1_choun")
+
+[node name="Player" parent="." unique_id=1536697091 instance=ExtResource("2_o6xl0")]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1497042993]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5449828, 0)
+use_collision = true
+size = Vector3(100, 1, 100)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=466336544]
+environment = SubResource("Environment_i7pll")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=980197923]
+transform = Transform3D(0.98923945, 0, -0.14630544, 0, 1, 0, 0.14630544, 0, 0.98923945, 8.709479, 0.91699123, -8.193792)
+use_collision = true
+size = Vector3(3, 3, 3)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=813946453]
+transform = Transform3D(0.8960323, 0, 0.44398895, 0, 1, 0, -0.44398895, 0, 0.8960323, -5.1359444, -0.5728264, 6.265108)
+use_collision = true
+size = Vector3(3, 3, 3)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1253926335]
+transform = Transform3D(0.7834632, -0.3889411, 0.4846754, 0, 0.77992535, 0.62587255, -0.6214382, -0.4903481, 0.6110428, 0, 4.171158, 3.8939219)
+shadow_enabled = true
+
+[node name="UIRoot" type="Control" parent="." unique_id=587616788]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("6_jkv2x")
+
+[node name="Label" type="Label" parent="UIRoot" unique_id=798015030]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 17.0
+offset_top = -11.5
+offset_right = 191.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Entity" type="Node3D" parent="." unique_id=1557398874]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9425929, 1.4663337, 0)
+script = ExtResource("7_jbj1t")
+item = SubResource("Resource_85g3d")
+metadata/_custom_type_script = "uid://dv3i5aqutgy74"
+
+[node name="Interactable" type="Area3D" parent="Entity" unique_id=785426250]
+script = ExtResource("10_0ld40")
+metadata/_custom_type_script = "uid://j33r1rthsngr"
