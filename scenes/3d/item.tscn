@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://do14nr00qyynh"]
 
-[ext_resource type="Script" uid="uid://boydtpbjpdkce" path="res://code/scenes/item.gd" id="1_kuttx"]
+[ext_resource type="Script" uid="uid://boydtpbjpdkce" path="res://code/3d/item.gd" id="1_kuttx"]
 [ext_resource type="ArrayMesh" uid="uid://b6pf4mvm6581f" path="res://src/mesh/rock.tres" id="2_7vun0"]
 [ext_resource type="Material" uid="uid://djxfhrhi1rchd" path="res://res/base_material.tres" id="3_86o3o"]
 
