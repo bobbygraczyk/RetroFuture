@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://ydo53uanfond" path="res://code/models/item_stack.gd" id="6_vxff7"]
 [ext_resource type="ArrayMesh" uid="uid://b6pf4mvm6581f" path="res://src/mesh/rock.tres" id="7_vxff7"]
 [ext_resource type="Script" uid="uid://bkxyuk8vyijuf" path="res://code/components/inventory.gd" id="8_nktpl"]
-[ext_resource type="Script" uid="uid://h0fit06hmvig" path="res://code/models/inventory.gd" id="9_o4xwt"]
+[ext_resource type="Script" uid="uid://h0fit06hmvig" path="res://code/models/inventory_node.gd" id="9_o4xwt"]
 [ext_resource type="Resource" uid="uid://ebpgqy8t6ugs" path="res://res/items/gears.tres" id="10_03p4r"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ygenq"]

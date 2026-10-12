@@ -25,12 +25,16 @@ func _physics_process(_delta: float):
 			focus_target.hover()
 		focus_changed.emit(focus_target)
 		
-	if Input.is_action_just_pressed("interact") and focus_target:
-		focus_target.interact(self)
+	if Input.is_action_just_pressed("interact"):
+		if ui_root.external_inventory_ref:
+			ui_root.close_external_inventory()
+		elif focus_target:
+			focus_target.interact(self)
 		
-func drop_item(index: int, p_inventory: Inventory):
-	var drop_stack = p_inventory.slots[index]
-	p_inventory.slots[index] = null
+func drop_item(index: int, inventory_grid: InventoryGrid):
+	print(index, inventory_grid)
+	var drop_stack = inventory_grid.inventory.slots[index]
+	inventory_grid.inventory.slots[index] = null
 	
 	ui_root.refresh()
 	

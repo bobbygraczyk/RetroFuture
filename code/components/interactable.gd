@@ -19,10 +19,14 @@ func boot(shape: Shape3D, p_text: String, p_parent: Variant):
 func hover():
 	if parent is Item:
 		parent.mesh_instance.set_instance_shader_parameter("size", 1.05)
+	if parent is InventoryNode:
+		parent.set_instance_shader_parameter("size", 1.05)
 
 func end_hover():
 	if parent is Item:
 		parent.mesh_instance.set_instance_shader_parameter("size", 0)
+	if parent is InventoryNode:
+		parent.set_instance_shader_parameter("size", 0)
 
 func interact(player: Player):
 	interacted.emit(player)
