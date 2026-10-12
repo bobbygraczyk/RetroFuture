@@ -73,16 +73,6 @@ Settlers will fill any open occupation.
 Emergent relationships between settlers, and
 between the player and settlers. TBD.
 
-## Todo
-
-- [x] Project File
-- [x] Character Locomotion
-- [x] `resource` data structure
-- [x] Spawn resources in world
-- [x] Basic UI
-- [ ] Character state machine
-- [ ] Harvest resource
-
 ## Notes
 
 ### UI Notes
@@ -101,3 +91,19 @@ between the player and settlers. TBD.
   others
 - Animal Crossing-esque vocaloid dialogue
   (inflection reactive to emote track?)
+
+## Code Style
+
+### `create()` factories
+Never directly create scene or class 
+instances with `instantiate()` or `new()`. 
+
+Always call the class's `create()` function, 
+which should return a reference to the new 
+instance.
+
+### `instantiate()` quirk
+Always call like so:
+`var new_scene = scene.instantiate() as Type`
+Declaring the type earlier will not be 
+detected by Godot's Intellisense.
