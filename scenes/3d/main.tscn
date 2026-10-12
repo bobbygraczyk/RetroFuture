@@ -7,8 +7,8 @@
 [ext_resource type="Resource" uid="uid://bc11v30iyhxmu" path="res://res/items/wood.tres" id="5_kwupl"]
 [ext_resource type="Script" uid="uid://ydo53uanfond" path="res://code/models/item_stack.gd" id="6_vxff7"]
 [ext_resource type="ArrayMesh" uid="uid://b6pf4mvm6581f" path="res://src/mesh/rock.tres" id="7_vxff7"]
-[ext_resource type="Script" uid="uid://bkxyuk8vyijuf" path="res://code/components/inventory.gd" id="8_nktpl"]
-[ext_resource type="Script" uid="uid://h0fit06hmvig" path="res://code/models/inventory_node.gd" id="9_o4xwt"]
+[ext_resource type="Script" uid="uid://bkxyuk8vyijuf" path="res://code/components/inventory_node.gd" id="8_nktpl"]
+[ext_resource type="Script" uid="uid://h0fit06hmvig" path="res://code/models/inventory.gd" id="9_o4xwt"]
 [ext_resource type="Resource" uid="uid://ebpgqy8t6ugs" path="res://res/items/gears.tres" id="10_03p4r"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ygenq"]
@@ -28,21 +28,15 @@ script = ExtResource("6_vxff7")
 item = ExtResource("5_kwupl")
 metadata/_custom_type_script = "uid://ydo53uanfond"
 
-[sub_resource type="Resource" id="Resource_gr78i"]
+[sub_resource type="Resource" id="Resource_220nt"]
 script = ExtResource("6_vxff7")
 item = ExtResource("10_03p4r")
 count = 10
 metadata/_custom_type_script = "uid://ydo53uanfond"
 
-[sub_resource type="Resource" id="Resource_mocdp"]
-script = ExtResource("6_vxff7")
-item = ExtResource("5_kwupl")
-count = 5
-metadata/_custom_type_script = "uid://ydo53uanfond"
-
-[sub_resource type="Resource" id="Resource_fsmsi"]
+[sub_resource type="Resource" id="Resource_a0s6n"]
 script = ExtResource("9_o4xwt")
-slots = Array[ExtResource("6_vxff7")]([SubResource("Resource_gr78i"), SubResource("Resource_mocdp")])
+slots = Array[ExtResource("6_vxff7")]([SubResource("Resource_220nt")])
 metadata/_custom_type_script = "uid://h0fit06hmvig"
 
 [node name="Main" type="Node3D" unique_id=232738217]
@@ -102,9 +96,8 @@ grow_vertical = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5540988, -3.6370273)
 item_stack = SubResource("Resource_twhyw")
 
-[node name="InventoryNode" type="MeshInstance3D" parent="." unique_id=875863565]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3978877, 2.6622658)
+[node name="InventoryNode" type="MeshInstance3D" parent="." unique_id=845500144]
 mesh = ExtResource("7_vxff7")
 script = ExtResource("8_nktpl")
-inventory = SubResource("Resource_fsmsi")
+inventory = SubResource("Resource_a0s6n")
 metadata/_custom_type_script = "uid://bkxyuk8vyijuf"

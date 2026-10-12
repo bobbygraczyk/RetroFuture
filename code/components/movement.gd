@@ -52,7 +52,7 @@ func _physics_process(delta: float):
 	
 	spring_arm.rotation.z = 0
 	
-	if !Input.is_action_pressed("sprint"):
+	if not Input.is_action_pressed("sprint"):
 		liVector = liVector * 0.5
 	
 	if player.is_on_floor():

@@ -11,7 +11,7 @@ const item_scene = preload("res://scenes/3d/item.tscn")
 @onready var mesh_instance: MeshInstance3D = $MeshInstance3D
 
 static func create(p_item: ItemStack, p_is_interactable: bool = false) -> Item:
-	var scene: Item = item_scene.instantiate()
+	var scene = item_scene.instantiate() as Item
 	scene.item_stack = p_item
 	scene.is_interactable = p_is_interactable
 
@@ -26,9 +26,8 @@ func _ready() -> void:
 	mesh_instance.scale = item_scale
 	
 	if is_interactable:
-		var child = Interactable.new()
+		var child = Interactable.create(mesh_shape, str(item_stack.item.name, " x", item_stack.count), self, mesh_instance)
 		child.interacted.connect(pick_up)
-		child.boot(mesh_shape, str(item_stack.item.name, " x", item_stack.count), self)
 		child.scale = item_scale
 		add_child(child)
 	
@@ -36,6 +35,5 @@ func pick_up(player: Player):
 	var remainder = player.inventory.add(item_stack.item, item_stack.count, -1)
 	if remainder == 0:
 		queue_free()
-		player.ui_root.on_focus_changed()
 	else:
 		item_stack.count = remainder

@@ -5,28 +5,31 @@ extends Area3D
 
 var display_text: String
 var parent: Variant
+var shape: Shape3D
+var highlight_mesh: MeshInstance3D
 
 signal interacted(player: Player)
 
-func boot(shape: Shape3D, p_text: String, p_parent: Variant):
+static func create(p_shape: Shape3D, p_text: String, p_parent: Variant, p_highlight_mesh: MeshInstance3D = null) -> Interactable:
+	var instance = Interactable.new()
+	
+	instance.shape = p_shape
+	instance.display_text = p_text
+	instance.parent = p_parent
+	instance.highlight_mesh = p_highlight_mesh
+
+	return instance
+	
+func _ready():
 	var col_shape := CollisionShape3D.new()
 	col_shape.shape = shape
 	add_child(col_shape)
 	
-	display_text = p_text
-	parent = p_parent
-	
 func hover():
-	if parent is Item:
-		parent.mesh_instance.set_instance_shader_parameter("size", 1.05)
-	if parent is InventoryNode:
-		parent.set_instance_shader_parameter("size", 1.05)
+	highlight_mesh.set_instance_shader_parameter("size", 1.05)
 
 func end_hover():
-	if parent is Item:
-		parent.mesh_instance.set_instance_shader_parameter("size", 0)
-	if parent is InventoryNode:
-		parent.set_instance_shader_parameter("size", 0)
+	highlight_mesh.set_instance_shader_parameter("size", 0)
 
 func interact(player: Player):
 	interacted.emit(player)

@@ -35,12 +35,8 @@ func close_external_inventory():
 	
 func open_grid(inventory: Inventory) -> InventoryGrid:
 	var grid := InventoryGrid.create(inventory)
-	grid.drop_item.connect(player_ref.drop_item)
+	if not inventory.drop_item.is_connected(player_ref.drop_item):
+		inventory.drop_item.connect(player_ref.drop_item)
+
 	add_child(grid)
 	return grid
-		
-func refresh():
-	if inventory_ui_ref:
-		inventory_ui_ref.refresh()
-	if external_inventory_ref:
-		external_inventory_ref.refresh()
