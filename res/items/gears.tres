@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://ebpgqy8t6ugs"]
+
+[ext_resource type="Texture2D" uid="uid://dwixa0u3dsuwa" path="res://src/icons/gears.png" id="1_1vfwh"]
+[ext_resource type="ArrayMesh" uid="uid://nlv88c6wwmkl" path="res://src/mesh/kay/gears.tres" id="1_8jip4"]
+[ext_resource type="Script" uid="uid://bvwyc4p8ii10y" path="res://code/models/item_data.gd" id="2_1vfwh"]
+
+[resource]
+script = ExtResource("2_1vfwh")
+mesh = ExtResource("1_8jip4")
+name = "gears"
+icon = ExtResource("1_1vfwh")
+id = 1
+max_stack = 20
+scale = 100
+metadata/_custom_type_script = "uid://bvwyc4p8ii10y"

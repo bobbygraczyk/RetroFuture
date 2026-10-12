@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bc11v30iyhxmu"]
+
+[ext_resource type="ArrayMesh" uid="uid://dj58ljygy6xs5" path="res://src/mesh/kay/wood.tres" id="1_37tpr"]
+[ext_resource type="Texture2D" uid="uid://bcoo2lty4h3ku" path="res://src/icons/wood.png" id="1_vsuke"]
+[ext_resource type="Script" uid="uid://bvwyc4p8ii10y" path="res://code/models/item_data.gd" id="2_vsuke"]
+
+[resource]
+script = ExtResource("2_vsuke")
+mesh = ExtResource("1_37tpr")
+name = "wood"
+icon = ExtResource("1_vsuke")
+id = 0
+scale = 100
+metadata/_custom_type_script = "uid://bvwyc4p8ii10y"

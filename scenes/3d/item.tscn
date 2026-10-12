@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://do14nr00qyynh"]
+
+[ext_resource type="Script" uid="uid://boydtpbjpdkce" path="res://code/scenes/item.gd" id="1_kuttx"]
+[ext_resource type="ArrayMesh" uid="uid://b6pf4mvm6581f" path="res://src/mesh/rock.tres" id="2_7vun0"]
+[ext_resource type="Material" uid="uid://djxfhrhi1rchd" path="res://res/base_material.tres" id="3_86o3o"]
+
+[node name="Item" type="RigidBody3D" unique_id=1786731830]
+script = ExtResource("1_kuttx")
+is_interactable = true
+metadata/_custom_type_script = "uid://boydtpbjpdkce"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1038851778]
+mesh = ExtResource("2_7vun0")
+surface_material_override/0 = ExtResource("3_86o3o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1453769489]

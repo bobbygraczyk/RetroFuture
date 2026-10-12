@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cvr4vyrtd13m4"
-path="res://.godot/imported/small_cube.blend-4cb7225a87dac0cd7571021367a5c7cb.scn"
+path="res://.godot/imported/small_cube.blend-114c03b2758ea27c82b76faec4d5859e.scn"
 
 [deps]
 
-source_file="res://src/small_cube.blend"
-dest_files=["res://.godot/imported/small_cube.blend-4cb7225a87dac0cd7571021367a5c7cb.scn"]
+source_file="res://src/mesh/small_cube.blend"
+dest_files=["res://.godot/imported/small_cube.blend-114c03b2758ea27c82b76faec4d5859e.scn"]
 
 [params]
 

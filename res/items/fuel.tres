@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cbyovlhmb5pxx"]
+
+[ext_resource type="ArrayMesh" uid="uid://8470rcf6rsld" path="res://src/mesh/kay/fuel.tres" id="1_ecmnh"]
+[ext_resource type="Texture2D" uid="uid://b1eq3no41v8b" path="res://src/icons/fuel.png" id="1_uedkv"]
+[ext_resource type="Script" uid="uid://bvwyc4p8ii10y" path="res://code/models/item_data.gd" id="2_uedkv"]
+
+[resource]
+script = ExtResource("2_uedkv")
+mesh = ExtResource("1_ecmnh")
+name = "fuel"
+icon = ExtResource("1_uedkv")
+id = 1
+max_stack = 50
+scale = 100
+metadata/_custom_type_script = "uid://bvwyc4p8ii10y"

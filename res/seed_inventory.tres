@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Inventory" format=3 uid="uid://irh1nh1txeae"]
+
+[ext_resource type="Script" uid="uid://h0fit06hmvig" path="res://code/models/inventory.gd" id="1_qf8sm"]
+[ext_resource type="Script" uid="uid://ydo53uanfond" path="res://code/models/item_stack.gd" id="2_irb42"]
+[ext_resource type="ArrayMesh" uid="uid://b6pf4mvm6581f" path="res://src/mesh/rock.tres" id="3_gjgar"]
+[ext_resource type="Script" uid="uid://bvwyc4p8ii10y" path="res://code/models/item_data.gd" id="4_quar5"]
+
+[sub_resource type="Resource" id="Resource_quar5"]
+script = ExtResource("4_quar5")
+metadata/_custom_type_script = "uid://bvwyc4p8ii10y"
+
+[sub_resource type="Resource" id="Resource_gjgar"]
+script = ExtResource("2_irb42")
+item = SubResource("Resource_quar5")
+metadata/_custom_type_script = "uid://ydo53uanfond"
+
+[resource]
+script = ExtResource("1_qf8sm")
+slots = Array[ExtResource("2_irb42")]([SubResource("Resource_gjgar")])
+metadata/_custom_type_script = "uid://h0fit06hmvig"

@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://djxfhrhi1rchd"]
+
+[ext_resource type="Texture2D" uid="uid://cu6mi0njp00i5" path="res://src/mesh/resource_bits_texture.png" id="1_8kwbw"]
+[ext_resource type="Shader" uid="uid://dquyyxquocws" path="res://code/shaders/outline.gdshader" id="2_iahks"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1f4af"]
+render_priority = 0
+shader = ExtResource("2_iahks")
+shader_parameter/color = Color(1, 1, 1, 1)
+
+[resource]
+resource_name = "resource"
+next_pass = SubResource("ShaderMaterial_1f4af")
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_8kwbw")
+emission_enabled = true

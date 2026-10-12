@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://b3v3i6e8vdkx3"]
+
+[ext_resource type="Script" uid="uid://cw5eyqhkn2clh" path="res://code/scenes/main.gd" id="1_6qbja"]
+[ext_resource type="PackedScene" uid="uid://clpkbkdwwhi53" path="res://scenes/3d/player.tscn" id="2_kwupl"]
+[ext_resource type="Script" uid="uid://cpftfl88lx07" path="res://code/ui/ui_root.gd" id="3_vxff7"]
+[ext_resource type="PackedScene" uid="uid://do14nr00qyynh" path="res://scenes/3d/item.tscn" id="4_6qbja"]
+[ext_resource type="Resource" uid="uid://bc11v30iyhxmu" path="res://res/items/wood.tres" id="5_kwupl"]
+[ext_resource type="Script" uid="uid://ydo53uanfond" path="res://code/models/item_stack.gd" id="6_vxff7"]
+[ext_resource type="ArrayMesh" uid="uid://b6pf4mvm6581f" path="res://src/mesh/rock.tres" id="7_vxff7"]
+[ext_resource type="Script" uid="uid://bkxyuk8vyijuf" path="res://code/components/inventory.gd" id="8_nktpl"]
+[ext_resource type="Script" uid="uid://h0fit06hmvig" path="res://code/models/inventory.gd" id="9_o4xwt"]
+[ext_resource type="Resource" uid="uid://ebpgqy8t6ugs" path="res://res/items/gears.tres" id="10_03p4r"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ygenq"]
+
+[sub_resource type="Sky" id="Sky_v6epu"]
+sky_material = SubResource("ProceduralSkyMaterial_ygenq")
+
+[sub_resource type="Environment" id="Environment_i7pll"]
+background_mode = 2
+sky = SubResource("Sky_v6epu")
+ambient_light_source = 3
+reflected_light_source = 2
+fog_enabled = true
+
+[sub_resource type="Resource" id="Resource_twhyw"]
+script = ExtResource("6_vxff7")
+item = ExtResource("5_kwupl")
+metadata/_custom_type_script = "uid://ydo53uanfond"
+
+[sub_resource type="Resource" id="Resource_gr78i"]
+script = ExtResource("6_vxff7")
+item = ExtResource("10_03p4r")
+count = 10
+metadata/_custom_type_script = "uid://ydo53uanfond"
+
+[sub_resource type="Resource" id="Resource_mocdp"]
+script = ExtResource("6_vxff7")
+item = ExtResource("5_kwupl")
+count = 5
+metadata/_custom_type_script = "uid://ydo53uanfond"
+
+[sub_resource type="Resource" id="Resource_fsmsi"]
+script = ExtResource("9_o4xwt")
+slots = Array[ExtResource("6_vxff7")]([SubResource("Resource_gr78i"), SubResource("Resource_mocdp")])
+metadata/_custom_type_script = "uid://h0fit06hmvig"
+
+[node name="Main" type="Node3D" unique_id=232738217]
+script = ExtResource("1_6qbja")
+
+[node name="Player" parent="." unique_id=1536697091 instance=ExtResource("2_kwupl")]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1497042993]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0037784576, -0.5580214, -0.00075030327)
+use_collision = true
+size = Vector3(100, 1, 100)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=466336544]
+environment = SubResource("Environment_i7pll")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=980197923]
+transform = Transform3D(0.98923945, 0, -0.14630544, 0, 1, 0, 0.14630544, 0, 0.98923945, 8.709479, 0.91699123, -8.193792)
+use_collision = true
+size = Vector3(3, 3, 3)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=813946453]
+transform = Transform3D(0.8960323, 0, 0.44398895, 0, 1, 0, -0.44398895, 0, 0.8960323, -5.1359444, -0.5728264, 6.265108)
+use_collision = true
+size = Vector3(3, 3, 3)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1253926335]
+transform = Transform3D(0.7834632, -0.3889411, 0.4846754, 0, 0.77992535, 0.62587255, -0.6214382, -0.4903481, 0.6110428, 0, 4.171158, 3.8939219)
+shadow_enabled = true
+
+[node name="UIRoot" type="Control" parent="." unique_id=587616788 node_paths=PackedStringArray("player_ref")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("3_vxff7")
+player_ref = NodePath("../Player")
+
+[node name="Label" type="Label" parent="UIRoot" unique_id=798015030]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 17.0
+offset_top = -11.5
+offset_right = 191.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Item" parent="." unique_id=1786731830 instance=ExtResource("4_6qbja")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5540988, -3.6370273)
+item_stack = SubResource("Resource_twhyw")
+
+[node name="InventoryNode" type="MeshInstance3D" parent="." unique_id=875863565]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3978877, 2.6622658)
+mesh = ExtResource("7_vxff7")
+script = ExtResource("8_nktpl")
+inventory = SubResource("Resource_fsmsi")
+metadata/_custom_type_script = "uid://bkxyuk8vyijuf"

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://6on3wxq3qhlk"]
+
+[ext_resource type="ArrayMesh" uid="uid://b6pf4mvm6581f" path="res://src/mesh/rock.tres" id="2_m0cyi"]
+[ext_resource type="Material" uid="uid://djxfhrhi1rchd" path="res://res/base_material.tres" id="3_rpts5"]
+
+[sub_resource type="GDScript" id="GDScript_jsogc"]
+script/source = "@tool
+
+class_name Entity
+extends RigidBody3D
+
+@export var is_interactable := false
+
+func _ready():
+	
+"
+
+[node name="Entity" type="RigidBody3D" unique_id=1285680381]
+script = SubResource("GDScript_jsogc")
+metadata/_custom_type_script = "uid://dv3i5aqutgy74"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=665870865]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2077555834]
+mesh = ExtResource("2_m0cyi")
+surface_material_override/0 = ExtResource("3_rpts5")

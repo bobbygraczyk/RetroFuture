@@ -1,19 +1,31 @@
 # RETRO SURVIVAL THING
-
-## Brief
 This is an open-world survival crafting game 
 with tower defense and city sim elements.
 
-## World & Tone
+## World
 Humans have been forced into the wild by a
 rogue AI hive. Even though it's thousands of
 miles away, the hive city's spires can be 
 seen reaching into the heavens. The hive sends
-probes to eradicate remaning humans.
+probes to eradicate remaning humans. You are 
+trying to create a safe haven for drifters
+and strays.
+
+## Tone 
+Survival, but hopeful. Subdued and dreamy.
+The light comes out in small moments.
+Humans have banned all advanced magnification
+devices and long-range communication devices.
+Hive bots have banned technology. It must be
+destroyed immediately.
+
+## Aesthetic
+Gears, tubes, CRTs, filament. Alternative, 
+punk, human.
 
 ## Overview
 
-### Vertical Slice 1 - /Survival/
+### Milestone 1 - *Survival*
 The player spawns with a deployable Nexus and
 some resource-gathering tools. The Nexus has 
 extra storage, a light, and generates heat.
@@ -29,7 +41,7 @@ player must build a simple shelter around the
 Nexus, craft a weapon, and defend it until
 dawn.
 
-### Vertical Slice 2 - /Defense & Automation/
+### Milestone 2 - *Defense & Automation*
 Auto-miners and auto-crafting machines can be 
 deployed in the world and connected via belts. 
 They require power and regular maintenance.
@@ -40,7 +52,7 @@ Nexus. These structures require power and
 ammunition (if relevant). Ammunition can be
 supplied via belts.
 
-### Vertical Slice 3 - /Settlers/
+### Milestone 3 - *Settlers*
 Your outpost is the only safe place for 
 thousands of miles. Naturally, travellers stop
 to rest. If it's safe enough and you have 
@@ -57,21 +69,30 @@ structures, like a stove for a chef or a
 repair bench for a maintenance worker. 
 Settlers will fill any open occupation.
 
-### Vertical Slice 4 - /Drama/
+### Milestone 4 - *Drama*
 Emergent relationships between settlers, and
 between the player and settlers. TBD.
 
-## Milestones
+## Todo
 
-[x] Project File
-[x] Character Locomotion
-[x] `resource` data structure
-[x] Spawn resources in world
-[x] Basic UI
-[ ] Character state machine
-[ ] Harvest resource
+- [x] Project File
+- [x] Character Locomotion
+- [x] `resource` data structure
+- [x] Spawn resources in world
+- [x] Basic UI
+- [ ] Character state machine
+- [ ] Harvest resource
 
 ## Notes
+
+### UI Notes
+- Menuing is a 'planner' or 'journal'
+- You can write notes in there, see a 
+  calendar, and make todos
+- Inventory is in journal
+- Main UI clock/date is a perpetual
+  calendar watch worn by the player
+  (but always displayed on UI)
 
 ### Random thoughts
 - Events with ghosts of dead NPCs
@@ -93,7 +114,7 @@ A resource that describes *what something is*
 in data - it never directly exists in the
 scene tree.
 
-Children: `ResourceData`
+Subclasses: `ResourceData`
 
 2. `scenes/Entity.tscn`
 
@@ -107,4 +128,4 @@ A component for the `Entity` scene that
 defines *how the player interacts* with an 
 `Entity`.
 
-Children: `Gatherable`, `Pickup`, `Buildable`
+Subclasses: `Gatherable`, `Pickup`, `Buildable`
