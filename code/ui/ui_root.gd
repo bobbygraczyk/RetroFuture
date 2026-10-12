@@ -32,8 +32,9 @@ func toggle_external_inventory(inventory):
 	else:
 		external_inventory_ref = InventoryGrid.create(inventory)
 		external_inventory_ref.drop_item.connect(player_ref.drop_item)
-		external_inventory_ref.position.x = 200
+		print(external_inventory_ref.global_position)
 		add_child(external_inventory_ref)
+		print(external_inventory_ref)
 		
 func refresh():
 	if inventory_ui_ref:
