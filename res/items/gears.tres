@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("2_1vfwh")
 mesh = ExtResource("1_8jip4")
-name = "gears"
+name = "Gears"
 icon = ExtResource("1_1vfwh")
 id = 1
 max_stack = 20

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://daba18ldt1nt2"]
+
+[ext_resource type="Texture2D" uid="uid://bkvuq6mo55u1" path="res://src/icons/wrench.png" id="1_h143o"]
+[ext_resource type="ArrayMesh" uid="uid://dq115cok1m3as" path="res://src/mesh/kay/wrench.tres" id="1_tqumn"]
+[ext_resource type="Script" uid="uid://bvwyc4p8ii10y" path="res://code/models/item_data.gd" id="2_h143o"]
+
+[resource]
+script = ExtResource("2_h143o")
+type = 1
+mesh = ExtResource("1_tqumn")
+name = "Wrench"
+icon = ExtResource("1_h143o")
+id = 4
+max_stack = 1
+scale = 100
+equip_slot = 1
+metadata/_custom_type_script = "uid://bvwyc4p8ii10y"

@@ -7,8 +7,12 @@
 font_size = 12
 
 [node name="PanelContainer" type="PanelContainer" unique_id=396232082]
+self_modulate = Color(1, 0, 1, 1)
 custom_minimum_size = Vector2(42, 42)
 script = ExtResource("1_3csud")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2086964129]
+layout_mode = 2
 
 [node name="Icon" type="TextureRect" parent="." unique_id=1982981288]
 layout_mode = 2

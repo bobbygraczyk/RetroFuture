@@ -33,7 +33,9 @@ func _ready() -> void:
 	
 func pick_up(player: Player):
 	var remainder = player.inventory.add(item_stack.item, item_stack.count, -1)
+	Events.item_picked_up.emit(item_stack)
 	if remainder == 0:
+		player.ui_root.on_focus_changed(null)
 		queue_free()
 	else:
 		item_stack.count = remainder

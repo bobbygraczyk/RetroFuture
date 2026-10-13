@@ -7,9 +7,9 @@
 [resource]
 script = ExtResource("2_uedkv")
 mesh = ExtResource("1_ecmnh")
-name = "fuel"
+name = "Fuel"
 icon = ExtResource("1_uedkv")
-id = 1
+id = 0
 max_stack = 50
 scale = 100
 metadata/_custom_type_script = "uid://bvwyc4p8ii10y"

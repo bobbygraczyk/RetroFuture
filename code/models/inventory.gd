@@ -4,12 +4,14 @@ extends Resource
 signal drop_item(index: int, inventory: Inventory)
 
 @export var slots: Array[ItemStack] = []
+@export var name: String = "Inventory"
 
-func _init(num_slots: int = 0, p_items: Array[ItemStack] = []):
+func _init(num_slots: int = 0, p_items: Array[ItemStack] = [], p_name: String = "Inventory"):
 	for item in p_items:
 		slots.push_back(item)
 
 	slots.resize(num_slots)
+	name = p_name
 
 func add(item: ItemData, amount: int, slot := -1) -> int:
 	if slot == -1:
@@ -62,9 +64,14 @@ func move(from_inv: Inventory, from: int, to_inv: Inventory, to: int):
 		a.count -= moved
 		if a.count == 0:
 			from_inv.slots[from] = null
+		Events.item_moved.emit(b, from_inv, to_inv)
 	else:
 		from_inv.slots[from] = b
 		to_inv.slots[to] = a
+		if a:
+			Events.item_moved.emit(a, from_inv, to_inv)
+		if b:
+			Events.item_moved.emit(b, to_inv, from_inv)
 	from_inv.changed.emit()
 	to_inv.changed.emit()
 

@@ -43,3 +43,10 @@ func _notification(type: int) -> void:
 func refresh():
 	%Amount.text = str(inventory.slots[index].count) if inventory.slots[index] else ""
 	$Icon.texture = inventory.slots[index].item.icon if inventory.slots[index] else null
+	
+func highlight_on():
+	print('hi')
+	modulate = Color.YELLOW
+	
+func highlight_off():
+	modulate = Color.WHITE
