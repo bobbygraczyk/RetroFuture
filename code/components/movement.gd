@@ -1,24 +1,24 @@
 class_name Movement
 extends Node
 
-@export_group("Movement")
-@export var MOVE_SPEED = 10
-@export var JUMP_VELOCITY = 15
+var MOVE_SPEED = 10
+var JUMP_VELOCITY = 15
 
-@export_group("Input sensitivity")
-@export var MOUSE_SENSITIVITY = 300
-@export var PAD_SENSITIVITY = 100
-@export var ROTATE_SPEED = 10
-@export var GRAVITY_SCALE = 0.5
+var MOUSE_SENSITIVITY = 300
+var PAD_SENSITIVITY = 100
+var ROTATE_SPEED = 10
+var GRAVITY_SCALE = 0.5
 
-@export_group("Animation")
-@export var ANIM_LERP = 0.2
+var ANIM_LERP = 0.2
+
+var env_manager: EnvironmentManager
 
 #Player node references
 var spring_arm: SpringArm3D
 var animation_tree: AnimationTree
 var look_ray: RayCast3D
 var look_pos_object: Node3D
+var camera: Camera3D
 
 var jump_lerp := 0.0
 var mouse_look_delta := Vector2(0, 0)
@@ -38,17 +38,23 @@ func _ready():
 	animation_tree = player.get_node('UAL1/AnimationTree')
 	look_ray = player.get_node('SpringArm3D/RayCast3D')
 	look_pos_object = player.get_node('LookPos')
+	camera = player.get_node('SpringArm3D/Camera3D')
+	env_manager = get_tree().current_scene.get_node('EnvironmentManager')
 
 func _physics_process(delta: float):
 	var liVector := Input.get_vector("locomotion_left", "locomotion_right", "locomotion_up", "locomotion_down")
 	look_delta = Input.get_vector("camera_left", "camera_right", "camera_up", "camera_down") * PAD_SENSITIVITY
 	look_delta += (mouse_look_delta * MOUSE_SENSITIVITY) / 50 #scale relative to pad
-		
+	
+	# move the camera
 	spring_arm.rotate_y(-look_delta.x * 0.001)
 	spring_arm.rotate_x(-look_delta.y * 0.001 * 
 		(1 if (rad_to_deg(spring_arm.rotation.y) < 90 && rad_to_deg(spring_arm.rotation.y) > -90)
 		else -1)
 	)
+	
+	# tell the env manager the view updated for culling
+	env_manager.view_update(camera.get_frustum(), player.position)
 	
 	spring_arm.rotation.z = 0
 	

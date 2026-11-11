@@ -69,9 +69,6 @@ script = ExtResource("1_6qbja")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=869095806]
 environment = SubResource("Environment_fsmsi")
 
-[node name="Player" parent="." unique_id=1536697091 instance=ExtResource("2_kwupl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.757024, -11.346268, 0)
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1253926335]
 transform = Transform3D(0.7834632, -0.3889411, 0.4846754, 0, 0.77992535, 0.62587255, -0.6214382, -0.4903481, 0.6110428, 0, 4.171158, 3.8939219)
 light_color = Color(0.7667217, 0.73427755, 0.6181686, 1)
@@ -140,28 +137,31 @@ theme_override_font_sizes/italics_font_size = 8
 theme_override_font_sizes/mono_font_size = 16
 
 [node name="Item" parent="." unique_id=1786731830 instance=ExtResource("4_6qbja")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.402011, -3.6370273)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.402011, 60.89375)
 item_stack = SubResource("Resource_twhyw")
 
 [node name="InventoryNode" type="MeshInstance3D" parent="." unique_id=845500144]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8848839, -10.563324, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8848839, -10.563324, 64.53078)
 mesh = ExtResource("7_vxff7")
 script = ExtResource("8_nktpl")
 inventory = SubResource("Resource_a0s6n")
 metadata/_custom_type_script = "uid://bkxyuk8vyijuf"
 
 [node name="terrain" parent="." unique_id=1742939947 instance=ExtResource("13_xajaw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.70511, -38.925346, 28.575691)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.70511, -38.925346, 93.10647)
 
-[node name="mesh" parent="terrain" index="0" unique_id=1064710964]
+[node name="mesh" parent="terrain" index="0" unique_id=1736953512]
 transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 3.060241, -246.06119, 0, -88.828285)
 visible = false
 
-[node name="mesh-col" parent="terrain" index="1" unique_id=26512585]
+[node name="mesh-col" parent="terrain" index="1" unique_id=356286802]
 transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 3.060241, -98.56816, 0, 59.98905)
 
+[node name="StaticBody3D" parent="terrain/mesh-col" index="0" unique_id=2143496618]
+collision_layer = 9
+
 [node name="tent" parent="." unique_id=18451832 instance=ExtResource("15_tgum2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.962255, -12.018593, -4.468172)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.962255, -12.018593, 60.062607)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="tent" unique_id=292744169]
 
@@ -169,9 +169,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.962255, -12.018593, -4.468
 transform = Transform3D(0.9879146, 0, 0, 0, 0.9879146, 0, 0, 0, 0.9879146, 0, 0.6763346, 0)
 shape = SubResource("ConcavePolygonShape3D_tgum2")
 
-[node name="EnvironmentManager" type="Node" parent="." unique_id=1920477260]
+[node name="EnvironmentManager" type="Node" parent="." unique_id=579505824]
 script = ExtResource("16_xu0w8")
 metadata/_custom_type_script = "uid://bfdm4urxorbm6"
+
+[node name="Player" parent="." unique_id=1536697091 instance=ExtResource("2_kwupl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3647022, -10.562294, 74.724236)
 
 [editable path="terrain"]
 [editable path="tent"]
