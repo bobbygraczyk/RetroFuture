@@ -6,7 +6,7 @@ extends Node
 @export var JUMP_VELOCITY = 15
 
 @export_group("Input sensitivity")
-@export var MOUSE_SENSITIVITY = 100
+@export var MOUSE_SENSITIVITY = 300
 @export var PAD_SENSITIVITY = 100
 @export var ROTATE_SPEED = 10
 @export var GRAVITY_SCALE = 0.5

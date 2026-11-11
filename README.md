@@ -28,9 +28,10 @@ punk, human.
 ### Milestone 1 - *Survival*
 The player spawns with a deployable Nexus and
 some resource-gathering tools. The Nexus has 
-extra storage, a light, and generates heat.
-It also enables crafting simple tools and
-weapons.
+extra storage, a light, generates heat, and
+has a battery and recharge station for your
+tools. It also enables crafting simple tools 
+and weapons.
 
 To stay alive you must stay warm, eat food,
 and drink water. The player spawns with about
@@ -91,6 +92,9 @@ between the player and settlers. TBD.
   others
 - Animal Crossing-esque vocaloid dialogue
   (inflection reactive to emote track?)
+- Tools use battery packs
+- Quick demolish w no material return,
+  long demolish returns some materials
 
 ## Code Style
 
