@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b40e0w6s3d6w4"]
+
+[ext_resource type="Theme" uid="uid://bvybpicug6b54" path="res://res/theme.tres" id="1_ynu6g"]
+[ext_resource type="Script" uid="uid://clpigq1xj387a" path="res://code/utilities/terrain_paint.gd" id="2_h0b7v"]
+
+[node name="TerrainPaintUi" type="MarginContainer" unique_id=1921169465]
+z_index = 10
+z_as_relative = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+theme = ExtResource("1_ynu6g")
+script = ExtResource("2_h0b7v")

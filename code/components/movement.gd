@@ -53,13 +53,13 @@ func _physics_process(delta: float):
 		else -1)
 	)
 	
-	# tell the env manager the view updated for culling
-	env_manager.view_update(camera.get_frustum(), player.position)
-	
 	spring_arm.rotation.z = 0
 	
 	if not Input.is_action_pressed("sprint"):
 		liVector = liVector * 0.5
+		
+	if Input.is_action_just_pressed("exit"):
+		get_tree().quit()
 	
 	if player.is_on_floor():
 		player.velocity = (

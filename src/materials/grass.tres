@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://fjloek21ha4"]
+
+[ext_resource type="Shader" uid="uid://b5hg31lo7qcqk" path="res://code/shaders/grass.gdshader" id="1_pdvrj"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_pdvrj")
+shader_parameter/top_color = Color(7.70092e-07, 0.4326952, 0.45219898, 1)
+shader_parameter/bottom_color = Color(0, 0, 0, 1)

@@ -12,7 +12,7 @@ var hands_equip: ItemData = null
 signal focus_changed(target: Interactable)
 
 func _ready():
-	#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	$SpringArm3D/RayCast3D.add_exception(self)
 
 func _physics_process(_delta: float):
